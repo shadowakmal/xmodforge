@@ -1,0 +1,285 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* BODY */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: #e5e7eb;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* TOP BAR */
+.top-bar {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  display: flex;
+  gap: 14px;
+  z-index: 999;
+}
+
+.top-link {
+  padding: 10px 16px;
+  background: rgba(2, 6, 23, 0.75);
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  color: #e5e7eb;
+  text-decoration: none;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(56,189,248,0.15);
+}
+
+.top-link:hover {
+  color: #38bdf8;
+  border-color: #38bdf8;
+  box-shadow: 0 0 25px rgba(56,189,248,0.5);
+  transform: translateY(-2px);
+}
+
+/* VERSION TAG */
+.version {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  background: rgba(2,6,23,0.75);
+  color: #38bdf8;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 0 15px rgba(56,189,248,0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.version:hover {
+  color: #fff;
+  box-shadow: 0 0 25px rgba(56,189,248,0.7);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* CONTAINER */
+.container {
+  max-width: none;
+  width: 100%;
+  margin: 120px auto 60px;
+  padding: 0 20px;
+}
+
+/* HEADER */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* KATTA LOGO */
+.site-logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 18px;
+  box-shadow: 0 0 25px rgba(56,189,248,0.6);
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+
+.site-logo:hover {
+  transform: rotate(360deg) scale(1.05);
+}
+
+/* TITLE */
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-size: 52px;
+  color: #38bdf8;
+  text-shadow: 0 0 20px rgba(56,189,248,0.6);
+  margin-bottom: 8px;
+}
+
+/* SUBTITLE */
+.header p {
+  font-size: 18px;
+  color: #94a3b8;
+  margin-bottom: 14px;
+}
+
+.header span {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid #1e293b;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+/* MOD LIST */
+.mods {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+/* MOD CARD */
+.mod-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  padding: 30px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+  min-height: 140px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mod-card:hover {
+  transform: translateY(-4px);
+  border-color: #38bdf8;
+  box-shadow: 0 0 45px rgba(56,189,248,0.35);
+}
+
+/* MOD INFO */
+.mod-info h2 {
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.mod-info p {
+  font-size: 16px;
+  color: #94a3b8;
+}
+
+/* DOWNLOAD BUTTON — Tortoise shape */
+.download-btn {
+  width: 70px; /* kengroq tortburchak shakl */
+  height: 50px;
+  padding: 0;
+  border-radius: 19px; /* yumaloq qirralar biroz */
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  border: none;
+}
+
+.download-btn img.download-icon {
+  width: 43px; /* kichik rasm */
+  height: 43px;
+}
+
+.download-btn .btn-text {
+  display: none; /* yozuvni yashirish */
+}
+
+/* Hover effect */
+.download-btn:hover {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  box-shadow: 0 0 25px rgba(34,197,94,0.7);
+  transform: scale(1.05);
+}
+
+/* Active effect */
+.download-btn:active {
+  transform: scale(0.9);
+  box-shadow: 0 0 15px rgba(34,197,94,0.5);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* DOWNLOAD LOADING ANIMATION */
+.download-btn.loading {
+  background: #006aff;
+  pointer-events: none;
+}
+
+.download-btn.loading::after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 3px solid #fff;
+  border-top-color: transparent;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+}
+
+/* SPINNER */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* OVERLAY FOR INSTALLATION */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #22c55e 0%, #020617 70%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.install-box {
+  text-align: center;
+}
+
+.install-box p {
+  margin-top: 14px;
+  font-size: 18px;
+}
+
+.spinner {
+  width: 42px;
+  height: 42px;
+  border: 4px solid #bbf7d0;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+  .mod-card {
+    flex-direction: column;
+    gap: 20px;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .download-btn {
+    width: 55px;
+    height: 35px;
+  }
+
+  .download-btn img.download-icon {
+    width: 11px;
+    height: 11px;
+  }
+}
+
